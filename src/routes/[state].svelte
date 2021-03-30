@@ -1,4 +1,5 @@
 <script context="module">
+  import requests from '../data/requests'
   import stateNames from '../data/stateNames.js'
   export async function preload(page, session) {
     const state = page.params['state']
@@ -7,7 +8,8 @@
       return
     }
     try {
-      return { state: page.params['state'] }
+      const stats = await requests.stateStats(state)
+      return { state, stats }
     } catch (e) {
       console.log(e)
       this.error(500, e.message)
@@ -19,7 +21,7 @@
 <script>
   import CovidChart from '../components/CovidChart.svelte'
   import CovidStat from '../components/CovidStat.svelte'
-  export let state
+  export let state, stats
 </script>
 
 <div class="section header">
@@ -33,7 +35,7 @@
   </div>
 </div>
 
-<CovidStat />
+<CovidStat {...stats} />
 <CovidChart />
 
 <svelte:head>
