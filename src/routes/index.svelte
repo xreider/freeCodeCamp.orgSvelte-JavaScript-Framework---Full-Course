@@ -1,6 +1,9 @@
 <script>
+  import CovidChart from '../components/CovidChart.svelte'
+  import CovidStat from '../components/CovidStat.svelte'
+  import TableContainer from '../components/TableContainer.svelte'
 </script>
 
-<svelte:head>
-  <title>Sapper project template</title>
-</svelte:head>
+<CovidStat />
+<CovidChart />
+<TableContainer />
