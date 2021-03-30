@@ -11,7 +11,20 @@
   export let state
 </script>
 
-<h1>{state}</h1>
+<div class="section header">
+  <div class="container">
+    <h1>Covid 19 {state}</h1>
+    <p>
+      The data for this site came from <a href="https://covidtracking.com/">
+        Covid Tracking
+      </a>.
+    </p>
+  </div>
+</div>
 
 <CovidStat />
 <CovidChart />
+
+<svelte:head>
+  <title>Covid 19 {state}</title>
+</svelte:head>

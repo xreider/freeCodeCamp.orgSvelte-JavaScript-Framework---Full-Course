@@ -4,6 +4,21 @@
   import TableContainer from '../components/TableContainer.svelte'
 </script>
 
+<div class="section header">
+  <div class="container">
+    <h1>Covid 19 Us Tracker</h1>
+    <p>
+      The data for this site came from <a href="https://covidtracking.com/">
+        Covid Tracking
+      </a>.
+    </p>
+  </div>
+</div>
+
 <CovidStat />
 <CovidChart />
 <TableContainer />
+
+<svelte:head>
+  <title>Covid 19 Us Tracker</title>
+</svelte:head>
